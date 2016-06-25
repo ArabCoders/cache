@@ -1,0 +1,28 @@
+{
+    "name": "arabcoders/cache",
+    "type": "library",
+    "description": "A Base Cache handler that abstract away all the drivers/adapters differences",
+    "keywords": [
+        "cache"
+    ],
+    "homepage": "https://www.abdulmohsen.me",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "AbdulMohsen B. A. A.",
+            "email": "admin@arabcoders.org"
+        }
+    ],
+    "require": {
+        "php": ">=7.0"
+    },
+    "suggest": {
+        "ext-apcu": "Allows the use of apc cache store.",
+        "ext-redis": "Allows the use of Redis cache store."
+    },
+    "autoload": {
+        "psr-4": {
+            "arabcoders\\cache\\": "src/"
+        }
+    }
+}
