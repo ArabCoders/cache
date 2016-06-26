@@ -14,7 +14,8 @@ use arabcoders\cache\
 {
     CacheItem,
     Interfaces\Adapter,
-    Exceptions\CacheException
+    Exceptions\CacheException,
+    Interfaces\CacheItem as CacheItemInterface
 };
 
 /**
@@ -54,25 +55,20 @@ class APC implements Adapter
         return true;
     }
 
-    public function get( $key, array $options = [ ] )
+    public function get( $key, array $options = [ ] ): CacheItemInterface
     {
         $exists = false;
         $value  = apc_fetch( $key, $exists );
 
-        if ( array_key_exists( 'string', $options ) )
-        {
-            return $value;
-        }
-
         return new CacheItem( $key, $value, ( ( $exists == true ) ? true : false ), $this->__apcGetTtl( $key ) );
     }
 
-    public function exists( $key, array $options = [ ] )
+    public function exists( $key, array $options = [ ] ): bool
     {
         return apc_exists( $key );
     }
 
-    public function delete( $key, array $options = [ ] )
+    public function delete( $key, array $options = [ ] ): bool
     {
         if ( !apc_delete( $key ) )
         {

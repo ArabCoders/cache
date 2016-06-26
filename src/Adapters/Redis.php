@@ -17,7 +17,8 @@ use arabcoders\cache\
 {
     CacheItem,
     Interfaces\Adapter,
-    Exceptions\CacheException
+    Exceptions\CacheException,
+    Interfaces\CacheItem as CacheItemInterface
 };
 
 /**
@@ -83,7 +84,7 @@ class Redis implements Adapter
         return true;
     }
 
-    public function get( $key, array $options = [ ] ): CacheItem
+    public function get( $key, array $options = [ ] ): CacheItemInterface
     {
         $value = $this->redis->get( $key );
 
