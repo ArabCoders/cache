@@ -18,7 +18,7 @@ use \arabcoders\cache\Interfaces\Adapter as AdapterInterface;
  * @package    arabcoders\cache
  * @author     Abdul.Mohsen B. A. A. <admin@arabcoders.org>
  */
-interface Cache
+interface Cache extends BaseAdapter
 {
     /**
      * Constructor

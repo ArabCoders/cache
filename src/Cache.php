@@ -11,7 +11,9 @@ namespace arabcoders\cache;
 
 use arabcoders\cache\
 {
-    Interfaces\Cache as CacheInterface, Interfaces\Adapter, Interfaces\BaseAdapter, Interfaces\CacheItem
+    Interfaces\Adapter,
+    Interfaces\CacheItem,
+    Interfaces\Cache as CacheInterface
 };
 
 /**
@@ -19,7 +21,7 @@ use arabcoders\cache\
  *
  * @author Abdul.Mohsen B. A. A. <admin@arabcoders.org>
  */
-Class Cache implements CacheInterface, BaseAdapter
+Class Cache implements CacheInterface
 {
     /**
      * @var Adapter
